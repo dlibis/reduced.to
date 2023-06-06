@@ -13,6 +13,8 @@ import { useGetCurrentUser } from '~/routes/layout';
 import { Select } from '~/components/select/select';
 import { ArrowDoodle } from '~/components/arrow-doodle/arrow-doodle';
 
+import './shortener-input-btn.css';
+
 export interface ShortenerInputProps {
   onKeyUp$: (event: QwikKeyboardEvent<HTMLInputElement>) => void;
   onInput$: (event: InputEvent) => void;
@@ -72,7 +74,7 @@ export const ShortenerInput = component$((props: ShortenerInputProps) => {
                   <li
                     value={expirationTimeValue || undefined}
                     key={expirationTimeName}
-                    class="w-auto cursor-pointer  pl-4 py-1 dark:hover:bg-gray-700 hover:bg-gray-100"
+                    class="w-auto cursor-pointer  pl-4 py-1 hover:bg-[hsl(var(--bc)/0.2)]"
                     onClick$={$(() =>
                       handleSelectExpiredTime(expirationTimeValue, expirationTimeName)
                     )}
